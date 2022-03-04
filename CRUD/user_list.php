@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+ 
 
 $sql = "Select * from user_lists";
 $data = mysqli_query($conn, $sql);
@@ -19,6 +19,8 @@ $data = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_assoc($data)) {
     $records[] = $row;
 }
+
+
 ?>
 
 <html>
@@ -52,9 +54,9 @@ td, th {
         <h1 class=" alert-warning text-center mb-5 p-3">
             User Lists
 </h1>
-<div class="button" > 
-<input class="btn btn-primary" type="button" value="Add user" id="btnn">
-</div>
+<a href="add_user.php" class="btn btn-dark my-4">Add User
+
+</a>
 <table class="table" >
 <thead class="thead-dark">
     <tr>
