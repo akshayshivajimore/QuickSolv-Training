@@ -21,7 +21,7 @@
 <br/><br>
 {{Form::label('email', 'E-Mail');}}
 {{Form::text('email')}}
-{{ $errors->first('email') }}
+{{ $errors->first('email') }}   
 
 <br/><br>
 {{Form::label('password', 'Password');}}
