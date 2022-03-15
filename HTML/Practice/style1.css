@@ -1,0 +1,10 @@
+#parent {
+            
+            width: 500px 500px;
+height:500px;
+            background: powderblue;
+            margin: 0 auto;
+        }
+div {
+  border: 2px white solid;
+}

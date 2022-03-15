@@ -1,0 +1,74 @@
+*{
+font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+height0: 125%;
+min-height: 10vh;
+background: linear-gradient(65deg,white,powderblue);
+display: flex;
+flex-direction: column;
+align-items:center;
+} 
+h1{
+color: red;
+margin-top:100px;
+}
+p{
+font-family: 'Montserrat', sans-serif;
+color: Blue;
+
+margin-top: 25px;
+}
+form{
+margin-top: 70px;
+background: #FAEBD7;
+box-shadow: -3px 6px 4px black;
+}
+form input{
+width: 250px;
+height: 40px;
+border: none;
+outline: none;
+padding: 0 5px;
+}
+
+form button{
+width: 50px;
+height: 40px;
+
+background: yellow;
+color: black;
+outline : none;
+curser: pointer;
+align-items:center;4
+
+
+}
+
+.container{
+margin-top: 50px;
+}
+
+ul
+{
+list-style: none;
+width: 500px;
+}
+
+ul li{
+width: 100%;
+background: white;
+height: 30px;
+line-height: 30px;
+padding: 0 5px;
+position: relative;
+curser: pointer;
+display: block;
+margin: 2px 1px;
+box-shadow: -3px 6px 4px black;
+}
+

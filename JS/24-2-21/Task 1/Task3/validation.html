@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+			function validate(){
+				var name=document.fill_form.name.value;
+				var email=document.fill_form.email.value;
+				
+	
+				if(name==null || name==""){
+				alert("Name can't blank");
+	
+				return false;
+			}else if(email==null || email==""){
+				alert("fill email");
+				return false;
+			}
+			
+
+
+}
+</script>
+	</head>	
+<body>
+
+
+	<form name="fill_form" method="post" action="http://www.javatpoint.com/javascriptpages/valid.jsp" onsubmit="return validate()">
+<h1>Validation</h1>
+		Name: <input type="text" name="name" placeholder ="Enter Name"/><br><br>
+  		Email :<input type="email" name="email" placeholder="Email"/><br><br>
+		Phone no :<input type="text" name="num"><span id="num1"></span><br><br>
+    		Gender :<input type="radio" name="gender" value="1" /> Male
+    	 	<input type="radio" name="gender"value="2" /> Female<br><br>
+		Address:<input type="text" name"address" placessholder="Addres"/><br><br>
+
+		<input type="submit" value="submit">
+
+	</form>
+
+
+
+</body>
+</html>

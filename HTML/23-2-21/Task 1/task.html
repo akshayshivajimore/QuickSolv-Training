@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>	
+<body>
+	<h1>Adding Arrays</h1>
+	<form>
+
+		NAME : <input type="text" name="text" id="txt" placeholder ="Enter Name" required>
+
+		<p><h3>Click the button to display the value of the value attribute of the text field.</h3></p>
+
+		<button type="button" value="submit" class"btn-list">
+		Click
+		</button>
+
+	</form>
+
+	<div class="container">
+	<ul>
+		<li>Akshay</li>
+
+	</ul>
+	</div>
+
+	<script>
+		const inputText=document.querySelector('#txt');
+		const myButton=document.querySelector('.btn-list');
+		const list=document.querySelector('.container ul');
+		myButton.addEventListener('click',(e)=>
+		{
+			alert(inputText.value);
+			if(inputText.value != "")
+			{
+					
+				e.preventDefault();
+				const myLi=document.createElement('li');
+				myLi.innerHTML=inputText.value;
+				list.appendChild(myLi);
+
+			}
+		});
+	</script>
+</body>
+</html>
+ 

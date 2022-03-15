@@ -1,0 +1,122 @@
+*{
+margin:0;
+padding:0;
+}
+
+.main{
+width: 100%;
+background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%,url(2.jpg));
+background-position: center;
+background-size: cover;
+height: 109vh;
+}
+
+.navbar{
+width: 1300px;
+height: 75px;
+margin: auto;
+}
+
+.icon{
+width: 200px;
+float: left;
+height: 70px;
+}
+
+.logo{
+padding-left: 5px;
+float: left;
+padding-top: 10px;
+}
+
+.menu{
+width: 800px;
+float: right;
+height: 90px;
+}
+
+ul{
+float: left;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+ul li{
+list-style: none;
+margin-left: 120px;
+margin-top: 27px;
+font-size: 18px;
+}
+
+ul li a{
+text-decoration: none;
+color: black;
+font-family: Arial;
+font-size: 20;
+fond-weight: bold;
+transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+color: red;
+}
+
+.right{
+width: 500px;
+height: 380px;
+background: linear-gradient(to top, blue(0,0,0,0.8)50%,blue(0,0,0,0.8)50%);
+position: absolute;
+top: 20%;
+left: 700px;
+border-radius: 10px;
+padding: 25px;
+}
+
+.right h2{
+width: 220px;
+font-family: sans-serif;
+text-align: center;
+color: white;
+font-size; 22px;
+background-color:black;
+border-radius: 10px;
+margin: 2px;
+padding: 8px;
+}
+
+.right input{
+width: 80px;
+height: 20px;
+border-bottom: 1px solid blue;
+border-top: none;
+border-left: none;
+border-right: none;
+color: black;
+font-size: 15px;
+letter-spacing: 1px;
+margin-top:10px;
+font-family: sans-serif;
+}
+
+.container{
+width: 100%;
+display: flex;
+justify-content: space-round;
+align-itmes: center;
+padding: 10px 70px;
+}
+
+table{
+margin-top: 50px;
+text-align: center;
+background: #333;
+color: #fff;
+}
+
+#show th,#show td{
+padding: 13px;
+}
+#btna td input{
+width: 100%;
+}
