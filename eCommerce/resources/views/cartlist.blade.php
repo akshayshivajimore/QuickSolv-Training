@@ -16,6 +16,7 @@
                     <div class="">
                       <h2>{{$item->name}}</h2>
                       <h5>{{$item->description}}</h5>
+                      <h2>{{$item->price}}</h2>
                     </div>
              </div>
              <div class="col-sm-3">

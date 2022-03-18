@@ -19,4 +19,22 @@ class UserController extends Controller
             return redirect('/');
         }
     }
+
+    function signup()
+    {
+        $data= User::all();
+
+       return view('signup',['signup'=>$data]);
+
+    }
+    function add(Request $req)
+    {
+        $member= new User;
+        $member->name=$req->name;
+        $member->email=$req->email;
+        $member->password=$req->password;
+        $member->confirm_password=$req->confirm_password;
+        $member->save();    
+        return redirect('/login');
+    }
 }

@@ -35,3 +35,5 @@ Route::get("removecart/{id}",[ProductController::class,'removeCart']);
 Route::get("ordernow",[ProductController::class,'orderNow']); 
 Route::post("orderplace",[ProductController::class,'orderPlace']);
 Route::get("myorders",[ProductController::class,'myOrders']);
+Route::get("/signup",[UserController::class,'signup']);
+Route::post("/signup-add",[UserController::class,'add']);

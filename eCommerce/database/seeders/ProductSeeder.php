@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             [
                 'name'=>'Iphone',
-                "price"=>"74900",
+                "price"=>"₹74,990",
                 "description"=>"128 GB ROM, 15.49 cm (6.1 inch) Super Retina XDR Display, 
                 12MP + 12MP | 12MP Front Camera, A15 Bionic Chip Processor ",
                 "category"=>"mobile",
