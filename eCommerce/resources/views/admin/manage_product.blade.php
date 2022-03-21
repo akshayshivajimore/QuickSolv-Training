@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label for="gallery" class="control-label mb-1">Gallery</label>
-                            <input id="gallery" name="file" type="file" class="form-control" aria-required="true" aria-invalid="false" required>
+                            <input id="file" name="file" type="file" class="form-control" aria-required="true" aria-invalid="false" required>
                         </div>
 
                         @error('gallery')
