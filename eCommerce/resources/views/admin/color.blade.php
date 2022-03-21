@@ -11,7 +11,7 @@
 		</button>
     </div>
     @endif
-<h1>Size</h1> 
+<h1>Color</h1> 
    <a href="{{url('admin/color/manage_color')}}">
 <button type="button" class="btn btn-success">Add Color</button>
  
