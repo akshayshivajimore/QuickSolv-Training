@@ -52,16 +52,17 @@ class ProductControllerr extends Controller
             $model=Product::find($request->post('id'));
             $msg="Product updated";
         }else{
-        $model=new Category();
+        $model=new Product();
         $msg="Product inserted";
         }
 
-        $model->category_id=$request->post('category_id');
+        $model->category_id=1;
         $model->name=$request->post('name');
         $model->price=$request->post('price');
         $model->slug=$request->post('slug');
         $model->description=$request->post('description');
         $model->price=$request->post('price');
+        $model->price=$request->post('gallery');
         $model->status=1;
         $model->save();
         $request->session()->flash('message',$msg);

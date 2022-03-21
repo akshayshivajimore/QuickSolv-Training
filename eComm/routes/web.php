@@ -84,7 +84,7 @@ Route::get("admin/color/status/{status}/{id}",[ColorController::class,'status'])
 //Product Route
 
 Route::get("admin/product",[ProductControllerr::class,'index']);
-Route::get("admin/productr/manage_product",[ProductControllerr::class,'manage_product']);
+Route::get("admin/product/manage_product",[ProductControllerr::class,'manage_product']);
 Route::get("admin/product/manage_product/{id}",[ProductControllerr::class,'manage_product']);
 Route::post("admin/product/manage_product_process",[ProductControllerr::class,'manage_product_process'])->name('product.manage_product_process');
 Route::get("admin/product/delete/{id}",[ProductControllerr::class,'delete']);

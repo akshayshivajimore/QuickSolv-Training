@@ -33,7 +33,7 @@
                                             @enderror
                                             <div class="form-group">
                                                 <label for="category_slug" class="control-label mb-1">Category Slug</label>
-                                                <input id="category_slug" value="{{$category_name}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                                                <input id="category_slug" value="{{$category_slug}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
                                             </div>
 
                                             
