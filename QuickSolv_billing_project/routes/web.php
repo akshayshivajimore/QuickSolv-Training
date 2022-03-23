@@ -16,8 +16,13 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::get('login',[LoginController::class,'index']);
-Route::post('login/auth',[LoginController::class,'auth'])->name('auth');
+Route::get('/login',[LoginController::class,'login']);
+Route::get('/register',[LoginController::class,'register']);
+
+Route::post('/store',[LoginController::class,'store'])->name('store');
+
+Route::post('login/dashboard',[LoginController::class,'dashboard'])->name('dashboard');
+// Route::get('/login/dashboard',[LoginController::class,'login']);

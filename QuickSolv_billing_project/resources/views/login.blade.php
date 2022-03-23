@@ -62,15 +62,21 @@
                                 <img src="assets/img/login_new.png" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <form novalidate method="POST" action="{{route('auth')}}">
-                            @csrf
-                            <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
-                                <div class="wd-100p">
+                        <form novalidate method="POST" action="{{route('dashboard')}}"enctype='multipart/form-data'>
+                        @if(Session::has('success'))
+                                   <div class="alert alert-success">{{Session::get('success')}}</div>
+                                       @endif
+
+                                     @csrf
+
+                                  <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
+                                  <div class="wd-100p">
                                     <h3 class="tx-color-01 mg-b-5">Sign In</h3>
                                     <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="email" class="form-control" placeholder="username" id="username" required>
+                                        <input type="email"class="form-control"name="email"  placeholder="username" id="username"
+                                            required>
                                         <div class="invalid-feedback">Email id is required</div>
                                     </div>
                                     <div class="form-group">
@@ -78,14 +84,13 @@
                                             <label class="mg-b-0-f">Password</label>
                                             <a href="/admin/forgot-password" class="tx-13">Forgot password?</a>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="Enter your password" required>
+                                        <input type="password" class="form-control"name="password" placeholder="Enter your password">
                                         <div class="invalid-feedback">Password is required</div>
                                     </div>
                                     <button type="submit" class="btn btn-brand-02 btn-block">Sign In</button>
-                                    {{session('error')}}
                                     <div class="divider-text">or</div>
                                     <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a
-                                            href="/admin/signup">Create an Account</a></div>
+                                            href="register">Create an Account</a></div>
                                 </div>
                             </div>
                         </form>

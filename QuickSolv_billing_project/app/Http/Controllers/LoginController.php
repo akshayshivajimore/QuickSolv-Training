@@ -4,26 +4,44 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Hash;
 
 class LoginController extends Controller
 {
-    public function index()
-    {   
-        return view('login');
+    public function login()
+    {
+        return view("login");
     }
+    public function register()
+  
+    {
+        return view("register");
 
-    public function auth(Request $request)
-    {   
-        $username=$request->post('username');
-        $password=$request->post('password');
-
-        $result=User::where(['username'=>$username,'password'=>$password])->get();
-        if(isset($result['0']->id))
-        {
-
-        }else{
-            $request->session()->flash('error','Please enter valid details');
-            return redirect('login');
-        }
+       
     }
+    public function store(Request $request)  
+    { 
+       $this->validate($request,[  
+       'first_name'=>'required',  
+       'last_name'=> 'required',  
+       ]);  
+       $users=new user(); 
+       $users->first_name =$request->first_name;
+       $users->last_name =$request->last_name;
+       $users->email_id =$request->email_id;
+       $users->username =$request->username;
+       $users->password = Hash::make($request->password);
+       $res=$users->save();
+     
+        return redirect('login')->with('success','you have register successfully');
+   
+  
+   }
+   public function dashboard(Request $request){
+    $users=new user(); 
+    $users->username =$request->username;
+
+
+
+   }
 }
