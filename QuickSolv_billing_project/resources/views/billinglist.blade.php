@@ -2,26 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>QuicSolv</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="assets/lib/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="assets/lib/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/lib/select2/css/select2.min.css">
-  <link rel="stylesheet" href="assets/css/billing.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/calendar.css">
-  <link rel="stylesheet" href="assets/css/pages/chat.css">
-  <link rel="stylesheet" href="assets/css/pages/contacts.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/filemgr.css">
-  <link rel="stylesheet" href="assets/css/pages/landing.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="utf-8">
+    <title>@yield('title')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{URL::asset('assets/lib/@fortawesome/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/lib/ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/billing.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/auth.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/calendar.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/chat.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/contacts.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/dashboard.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/filemgr.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/landing.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/profile.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 </head>
 
 <body class="mat-typography">
@@ -31,7 +30,7 @@
       <header class="navbar-menu-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light wd-100p">
           <a href="javascript:void(0)" class="aside-logo bg-white rounded pd-5">
-            <img class="navbar-brand" src="assets/img/logo.png" height="45" alt="QuicSolv" />
+            <img class="navbar-brand" src="{{URL::asset('assets/img/logo.png')}}" height="45" alt="QuicSolv" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +49,7 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a href="javascript:void(0)" class="nav-link">
+                  <a href="/" class="nav-link">
                     <i class="feather-16 mg-x-5" data-feather="log-out"></i>
                     Logout
                   </a>
@@ -82,10 +81,12 @@
                 <h5 class="mg-b-0">Billing List</h5>
                 <ul class="list-inline d-flex mg-t-20 mg-sm-t-10 mg-md-t-0 mg-b-0">
                   <li class="list-inline-item d-flex align-items-center mg-l-5">
-                    <button type="button" class="btn btn-sm btn-primary btn-uppercase custom-btn">
+                  <a href="create_billing">  
+                  <button type="button" class="btn btn-sm btn-primary btn-uppercase custom-btn">
                       <i class="feather-16 mg-r-5" data-feather="plus-circle"></i>
                       Create
                     </button>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -118,7 +119,7 @@
                               <span class="d-none d-sm-inline mg-l-5">Download</span>
                             </a>
                             <span class="mx-2">|</span>
-                            <a class="user_list_table_link" href="#view_billing_file_info" data-toggle="modal">
+                            <a href="billing_list_info" class="user_list_table_link" data-toggle="modal">
                               <i class="feather-16" data-feather="eye"></i>
                               <span class="d-none d-sm-inline mg-l-5">
                                 View
@@ -183,27 +184,20 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
-  <script src="assets/lib/select2/js/select2.min.js"></script>
-  <script src="assets/lib/feather-icons/feather.min.js"></script>
-  <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <script src="assets/js/billing.js"></script>
-  <script src="assets/js/billing.aside.js"></script>
-  <script>
-    feather.replace()
-  </script>
-  <script>
-    $(document).ready(function() {
-      $('#billing_list_table').DataTable({
-        "paging":   true,
-        "ordering": true,
-        "info":     true
-      });
-    });
-  </script>
+
+
+
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="{{URL::asset('assets/lib/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{URL::asset('assets/lib/select2/js/select2.min.js')}}"></script>
+    <script src="{{URL::asset('assets/lib/feather-icons/feather.min.js')}}"></script>
+    <script src="{{URL::asset('assets/js/billing.js')}}"></script>
+    <script src="{{URL::asset('assets/js/billing.aside.js')}}"></script>
+    <script>
+        feather.replace()
+    </script>
 </body>
 
 </html>

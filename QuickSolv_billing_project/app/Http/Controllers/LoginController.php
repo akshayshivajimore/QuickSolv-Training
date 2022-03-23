@@ -40,8 +40,11 @@ class LoginController extends Controller
    public function dashboard(Request $request){
     $users=new user(); 
     $users->username =$request->username;
-
-
-
+    //return view("billinglist");
    }
+   public function billing_list()
+   {
+      return view("billinglist");
+   }
+
 }
