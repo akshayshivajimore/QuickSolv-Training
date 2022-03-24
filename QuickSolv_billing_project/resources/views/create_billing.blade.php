@@ -79,7 +79,7 @@
               </nav>
             </div>
             <div class="col-12 col-lg-12 col-xl-12 mg-t-10">
-              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{route('dashboard.add')}}">
+              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{route('dashboard.add')}}" enctype="multipart/form-data">
               @csrf  
               <div class="row no-gutters">
                   <div class="col-12 col-sm-12">
@@ -98,9 +98,9 @@
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-4 form-group mg-sm-t-0 tx-black">
-                            <label class="d-block" for="invoice_date">Upload File:</label>
-                            <input type="file" class="d-none" accept="image/*" #fileUpload accept=".xls, .xlsx" />
-                            <button type="button" (click)="fileUpload.click()" class="btn btn-primary btn-sm btn-uppercase mr-2">
+                            <label class="d-block" for="upload_file">Upload File:</label>
+                            <input type="file" name="filename" class="d-none" id="fileUpload" accept=".xls, .xlsx" />
+                            <button type="button" id="fileupload_btn" class="btn btn-primary btn-sm btn-uppercase mr-2">
                               <i class="feather-16 mg-x-5" data-feather="upload"></i>Browse
                             </button>
                             <a href="javascript:void(0)" class="font-weight-bold">
@@ -113,22 +113,22 @@
                         <div class="row row-sm mg-b-10">
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
                             <label for="invoice_date">Kind Attn:</label>
-                            <input type="text" class="form-control" rows="2" placeholder="Write Something">
+                            <input type="text" name="kind_attention" class="form-control" rows="2" placeholder="Write Something">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number part 1:</label>
-                            <input type="text" class="form-control" rows="2" placeholder="Invoice Number part 1">
+                            <input type="text" class="form-control" name="invoice_no_part_1" rows="2" placeholder="Invoice Number part 1">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number Part 2:</label>
-                            <input type="text" class="form-control" rows="2" placeholder="Invoice Number part 2">
+                            <input type="text" class="form-control" name="invoice_no_part_2" rows="2" placeholder="Invoice Number part 2">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number part 3:</label>
-                            <input type="text" class="form-control" rows="2" placeholder="Invoice Number part 3">
+                            <input type="text" class="form-control" name="invoice_no_part_3" rows="2" placeholder="Invoice Number part 3">
                               <div class="invalid-feedback">This is required</div>
                           </div>
                         </div>
@@ -174,6 +174,11 @@
     <script src="{{URL::asset('assets/js/billing.aside.js')}}"></script>
     <script>
       feather.replace()
+      $(document).ready(function(){
+        $('#fileupload_btn').click(function(){
+          $('#fileUpload').trigger('click');
+        });
+      });
     </script>
 </body>
 

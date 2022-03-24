@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class BillingFile extends Model
 {
     use HasFactory;
+    public $primaryKey = 'rec_id';
 }

@@ -111,10 +111,10 @@
                         @foreach($data as $list)
                         <tr>
                           <td>{{$list->rec_id}}</td>
-                          <td>{{$list->id}}</td>
+                          <td></td>
                           <td>{{$list->invoice_date}}</td>
-                          <td>{{$list->id}}</td>
-                          <td>{{$list->id}}</td>
+                          <td></td>
+                          <td></td>
                           <td>{{$list->kind_attention}}</td>
                           <td>
                             <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
@@ -122,14 +122,14 @@
                               <span class="d-none d-sm-inline mg-l-5">Download</span>
                             </a>
                             <span class="mx-2">|</span>
-                            <a href="billing_list_info" class="user_list_table_link" data-toggle="modal">
+                            <a href="billing_list_info" class="user_list_table_link">
                               <i class="feather-16" data-feather="eye"></i>
                               <span class="d-none d-sm-inline mg-l-5">
                                 View
                               </span>
                             </a>
                             <span class="mx-2">|</span>
-                            <a class="user_list_table_link" href="billing_list/delete/{{$list->rec_id}}" data-toggle="modal">
+                            <a class="user_list_table_link" href="billing_list/delete/{{$list->rec_id}}">
                               <i class="feather-16" data-feather="trash-2"></i>
                               <span class="d-none d-sm-inline mg-l-5">
                                 Delete
