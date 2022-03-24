@@ -24,8 +24,11 @@ Route::get('/', function () {
 Route::get('/register',[LoginController::class,'register']);
 Route::post('/store',[LoginController::class,'store'])->name('store');
 Route::post('login/billing_list',[LoginController::class,'dashboard'])->name('dashboard');
-Route::get('login/billing_list',[LoginController::class,'billing_list']);
+//Route::get('login/billing_list',[LoginController::class,'billing_list']);
+Route::get('login/billing_list',[BillingListController::class,'index']);
 Route::get('login/billing_list_info',[BillingListController::class,'billing_list_info']);
 Route::get('login/create_billing',[BillingListController::class,'create_billing']);
+Route::post('login/add',[BillingListController::class,'add'])->name('dashboard.add');
+Route::get('login/billing_list/delete/{id}',[BillingListController::class,'delete']);
 // Route::get('/login/dashboard',[LoginController::class,'login']);
 // Route::get('/login/billing_list',[LoginController::class,'billing_list']);

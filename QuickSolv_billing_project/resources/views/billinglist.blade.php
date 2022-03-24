@@ -90,6 +90,8 @@
                   </li>
                 </ul>
               </div>
+
+              {{session('message')}}
               <div class="card-body pos-relative pd-0">
                 <div class="pd-x-20 pd-y-10">
                   <div class="table-responsive custom-table-list">
@@ -106,13 +108,14 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($data as $list)
                         <tr>
-                          <td>1</td>
-                          <td>QS1234</td>
-                          <td>24/02/2022</td>
-                          <td>370</td>
-                          <td>QuicSolv</td>
-                          <td>Mr. Amit Sharma</td>
+                          <td>{{$list->rec_id}}</td>
+                          <td>{{$list->id}}</td>
+                          <td>{{$list->invoice_date}}</td>
+                          <td>{{$list->id}}</td>
+                          <td>{{$list->id}}</td>
+                          <td>{{$list->kind_attention}}</td>
                           <td>
                             <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
                               <i class="feather-16" data-feather="download"></i>
@@ -126,14 +129,15 @@
                               </span>
                             </a>
                             <span class="mx-2">|</span>
-                            <a class="user_list_table_link" href="#delete_billing_file_info" data-toggle="modal">
+                            <a class="user_list_table_link" href="billing_list/delete/{{$list->rec_id}}" data-toggle="modal">
                               <i class="feather-16" data-feather="trash-2"></i>
                               <span class="d-none d-sm-inline mg-l-5">
                                 Delete
                               </span>
                             </a>
                           </td>
-                        </tr>
+                        </tr> 
+                        @endforeach 
                       </tbody>
                     </table>
                   </div>

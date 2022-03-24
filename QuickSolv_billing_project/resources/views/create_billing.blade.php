@@ -79,8 +79,9 @@
               </nav>
             </div>
             <div class="col-12 col-lg-12 col-xl-12 mg-t-10">
-              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="">
-                <div class="row no-gutters">
+              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{route('dashboard.add')}}">
+              @csrf  
+              <div class="row no-gutters">
                   <div class="col-12 col-sm-12">
                     <div class="pd-10">
                       <fieldset class="form-fieldset mg-b-0">
