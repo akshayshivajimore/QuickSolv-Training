@@ -29,7 +29,7 @@
 <div class="content-header d-flex justify-content-end align-items-center">
 <header class="navbar-menu-wrapper">
 <nav class="navbar navbar-expand-lg navbar-light wd-100p">
-<a href="/" class="aside-logo bg-white rounded pd-5">
+<a href="/admin" class="aside-logo bg-white rounded pd-5">
 <img class="navbar-brand" src="assets/img/logo.png" height="45" alt="QuicSolv">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -41,7 +41,7 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
 <div class="navbar-right ml-auto">
 <ul class="navbar-nav">
 <li class="nav-item active">
-<a href="/" class="nav-link">
+<a href="login" class="nav-link">
     <i-feather class="mg-x-5" name="log-in"></i-feather>
     Login
 </a>
@@ -95,7 +95,7 @@ By clicking <strong>Create an account
 <button type="submit" class="btn btn-brand-02 btn-block">Create Account</button>
 <div class="divider-text">or</div>
 <div class="tx-13 mg-t-20 tx-center">Already have an account? 
-<a href="/">Sign In</a>
+<a href="login">Sign In</a>
 </div>
 </div>
 </div>

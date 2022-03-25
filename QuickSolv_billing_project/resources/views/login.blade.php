@@ -42,7 +42,7 @@
                         <div class="navbar-right ml-auto">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a href="/admin/login" class="nav-link">
+                                    <a href="login" class="nav-link">
                                         <i-feather class="mg-x-5" name="log-in"></i-feather>
                                         Login
                                     </a>
@@ -62,7 +62,7 @@
                                 <img src="assets/img/login_new.png" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <form novalidate method="POST" action="{{route('dashboard')}}"enctype='multipart/form-data'>
+                        <form novalidate method="POST" action="{{route('logindata')}}"enctype='multipart/form-data'>
                         @if(Session::has('success'))
                                    <div class="alert alert-success">{{Session::get('success')}}</div>
                                        @endif
@@ -75,7 +75,7 @@
                                     <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="email"class="form-control"name="email"  placeholder="username" id="username"
+                                        <input type="email"class="form-control"name="username"  placeholder="username" id="username"
                                             required>
                                         <div class="invalid-feedback">Email id is required</div>
                                     </div>

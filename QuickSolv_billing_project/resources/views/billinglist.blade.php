@@ -81,7 +81,7 @@
                 <h5 class="mg-b-0">Billing List</h5>
                 <ul class="list-inline d-flex mg-t-20 mg-sm-t-10 mg-md-t-0 mg-b-0">
                   <li class="list-inline-item d-flex align-items-center mg-l-5">
-                  <a href="create_billing">  
+                  <a href="add">  
                   <button type="button" class="btn btn-sm btn-primary btn-uppercase custom-btn">
                       <i class="feather-16 mg-r-5" data-feather="plus-circle"></i>
                       Create
@@ -111,18 +111,18 @@
                         @foreach($data as $list)
                         <tr>
                           <td>{{$list->rec_id}}</td>
-                          <td></td>
+                          <td>{{$list->file_name}}</td>
                           <td>{{$list->invoice_date}}</td>
-                          <td></td>
-                          <td></td>
+                          <td>{{$list->id}}</td>
+                          <td>{{$list->company_name}}</td>
                           <td>{{$list->kind_attention}}</td>
                           <td>
-                            <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
+                            <a class="user_list_table_link" href="javascript:void(0)" >
                               <i class="feather-16" data-feather="download"></i>
                               <span class="d-none d-sm-inline mg-l-5">Download</span>
                             </a>
                             <span class="mx-2">|</span>
-                            <a href="billing_list_info" class="user_list_table_link">
+                            <a href="view" class="user_list_table_link" >
                               <i class="feather-16" data-feather="eye"></i>
                               <span class="d-none d-sm-inline mg-l-5">
                                 View
@@ -203,5 +203,4 @@
         feather.replace()
     </script>
 </body>
-
 </html>

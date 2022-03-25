@@ -12,7 +12,7 @@ class BillingListController extends Controller
 {   
     public function index() 
     {
-        $result['data']=BillingFile::all();
+        $result['data']=Company::join('billing_files', 'companies.rec_id', '=', 'billing_files.company_id')->get();
         return view('billinglist',$result);
     }
     public function billing_list_info()

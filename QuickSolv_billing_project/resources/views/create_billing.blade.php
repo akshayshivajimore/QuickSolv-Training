@@ -9,19 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{URL::asset('assets/lib/@fortawesome/fontawesome-free/css/all.min.css')}}')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/lib/ionicons/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/lib/select2/css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/billing.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/auth.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/calendar.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/chat.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/contacts.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/dashboard.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/filemgr.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/landing.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/pages/profile.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="assets/lib/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="assets/lib/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/lib/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/billing.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="stylesheet" href="assets/css/pages/calendar.css">
+    <link rel="stylesheet" href="assets/css/pages/chat.css">
+    <link rel="stylesheet" href="assets/css/pages/contacts.css">
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="assets/css/pages/filemgr.css">
+    <link rel="stylesheet" href="assets/css/pages/landing.css">
+    <link rel="stylesheet" href="assets/css/pages/profile.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="mat-typography">
@@ -31,7 +31,7 @@
       <header class="navbar-menu-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light wd-100p">
           <a href="javascript:void(0)" class="aside-logo bg-white rounded pd-5">
-            <img class="navbar-brand" src="{{URL::asset('assets/img/logo.png')}}" height="45" alt="QuicSolv" />
+            <img class="navbar-brand" src="assets/img/logo.png" height="45" alt="QuicSolv" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a href="javascript:void(0)" class="nav-link">
+                  <a href="login" class="nav-link">
                     <i class="feather-16 mg-x-5" data-feather="log-out"></i>
                     Logout
                   </a>
@@ -79,9 +79,9 @@
               </nav>
             </div>
             <div class="col-12 col-lg-12 col-xl-12 mg-t-10">
-              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{route('dashboard.add')}}" enctype="multipart/form-data">
-              @csrf  
-              <div class="row no-gutters">
+              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{url('insert')}}"enctype='multipart/form-data'>
+              @csrf
+                <div class="row no-gutters">
                   <div class="col-12 col-sm-12">
                     <div class="pd-10">
                       <fieldset class="form-fieldset mg-b-0">
@@ -90,6 +90,9 @@
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
                             <label for="company_name">Company Name:</label>
                             <input type="text" class="form-control" placeholder="Company Name" id="company_name" name="company_name" maxlength="45">
+                           <!-- @foreach($company as $item)
+                             value="{{$item->id}}"->{{$item->name}}
+                               @endforeach-->
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
@@ -99,8 +102,9 @@
                           </div>
                           <div class="col-12 col-md-4 form-group mg-sm-t-0 tx-black">
                             <label class="d-block" for="upload_file">Upload File:</label>
-                            <input type="file" name="filename" class="d-none" id="fileUpload" accept=".xls, .xlsx" />
+                            <input type="file" name="filename" class="d-none"  id="fileUpload" accept=".xls, .xlsx" />
                             <button type="button" id="fileupload_btn" class="btn btn-primary btn-sm btn-uppercase mr-2">
+
                               <i class="feather-16 mg-x-5" data-feather="upload"></i>Browse
                             </button>
                             <a href="javascript:void(0)" class="font-weight-bold">
@@ -112,23 +116,23 @@
                         </div>
                         <div class="row row-sm mg-b-10">
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
-                            <label for="invoice_date">Kind Attn:</label>
-                            <input type="text" name="kind_attention" class="form-control" rows="2" placeholder="Write Something">
+                            <label for="kind_attn">Kind Attn:</label>
+                            <input type="text" class="form-control"name="kind_attn" rows="2" placeholder="Write Something">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number part 1:</label>
-                            <input type="text" class="form-control" name="invoice_no_part_1" rows="2" placeholder="Invoice Number part 1">
+                            <input type="text" class="form-control"name="invoice_no_part_1" rows="2" placeholder="Invoice Number part 1">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number Part 2:</label>
-                            <input type="text" class="form-control" name="invoice_no_part_2" rows="2" placeholder="Invoice Number part 2">
+                            <input type="text" class="form-control"name="invoice_no_part_2" rows="2" placeholder="Invoice Number part 2">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           <div class="col-12 col-md-2 form-group mg-sm-t-0">
                             <label for="invoice_date">Invoice Number part 3:</label>
-                            <input type="text" class="form-control" name="invoice_no_part_3" rows="2" placeholder="Invoice Number part 3">
+                            <input type="text" class="form-control"name="invoice_no_part_3" rows="2" placeholder="Invoice Number part 3">
                               <div class="invalid-feedback">This is required</div>
                           </div>
                         </div>
@@ -167,11 +171,11 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="{{URL::asset('assets/lib/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{URL::asset('assets/lib/select2/js/select2.min.js')}}"></script>
-    <script src="{{URL::asset('assets/lib/feather-icons/feather.min.js')}}"></script>
-    <script src="{{URL::asset('assets/js/billing.js')}}"></script>
-    <script src="{{URL::asset('assets/js/billing.aside.js')}}"></script>
+    <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/lib/select2/js/select2.min.js"></script>
+    <script src="assets/lib/feather-icons/feather.min.js"></script>
+    <script src="assets/js/billing.js"></script>
+    <script src="assets/js/billing.aside.js"></script>
     <script>
       feather.replace()
       $(document).ready(function(){

@@ -7,6 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class BillingFile extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+   public $table = 'billing_files';
     public $primaryKey = 'rec_id';
+    public $fillable = [
+        'company_id',
+        'invoice_date',
+        'kind_attention',
+        'last_name',
+        'file_name',
+        
+    ];
+    
+    use HasFactory;
+
+
+    public function billingfile()
+    {
+        return $this->belongsTo(Billingfile::class,'company_id','id');
+    }
+
+   
 }

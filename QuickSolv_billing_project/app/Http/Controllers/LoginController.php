@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-
 use App\Models\User;
 use Hash;
 
+use Illuminate\Http\Request;
+
+
 class LoginController extends Controller
 {
+    
+
     public function login()
     {
         return view("login");
@@ -35,16 +38,13 @@ class LoginController extends Controller
      
         return redirect('login')->with('success','you have register successfully');
    
-  
    }
-   public function dashboard(Request $request){
+   public function logindata(Request $request){
+       
     $users=new user(); 
     $users->username =$request->username;
-    //return view("billinglist");
-   }
-   public function billing_list()
-   {
-      return view("billinglist");
-   }
+  //  return view("admin.billing.index");
+  return redirect('billing-list');
 
+  }
 }
