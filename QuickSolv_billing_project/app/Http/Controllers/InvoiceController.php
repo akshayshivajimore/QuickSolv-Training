@@ -32,11 +32,11 @@ class InvoiceController extends Controller
         $billinginfo->invoice_no=$billingfile->rec_id;
         //$model->rec_id=$request->post('rec_id');
         $billinginfo->vertical=$request->vertical;
-        $billinginfo->claim_number=$requestclaim_number;
-        $billinginfo->state_code=$requeststate_code;
-        $billinginfo->state_name=$requeststate_name;
+        $billinginfo->claim_number=$request->claim_number;
+        $billinginfo->state_code=$request->state_code;
+        $billinginfo->state_name=$request->state_name;
         $billinginfo->gst_no=$request->gst_no;
-        $billinginfo->billing_name=$request->billing_name;
+        //$billinginfo->billing_name=$request->billing_name;
         $billinginfo->billing_address=$request->billing_address;
         $billinginfo->save();
         //$request->session()->flash('message','Created');

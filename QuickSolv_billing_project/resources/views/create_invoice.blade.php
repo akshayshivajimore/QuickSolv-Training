@@ -79,7 +79,7 @@
               </nav>
             </div>
             <div class="col-12 col-lg-12 col-xl-12 mg-t-10">
-              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{url('insert')}}"enctype='multipart/form-data'>
+              <form id="create-billing-info-form" class="needs-validation" method="POST" action="{{url('insert')}}"enctype='multipart/form-data'>
               @csrf
                 <div class="row no-gutters">
                   <div class="col-12 col-sm-12">
@@ -95,7 +95,7 @@
                           </div>
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
                             <label for="claim_Number">Claim Number:</label>
-                            <input type="text" class="form-control" id="claim_Number" name="claim_Number" maxlength="45">
+                            <input type="text" class="form-control" id="claim_Number" name="claim_number" maxlength="45">
                          
                             <div class="invalid-feedback">This is required</div>
                           </div>
@@ -108,13 +108,13 @@
                         <div class="row row-sm mg-b-10">
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
                             <label for="state">State:</label>
-                            <input type="text" class="form-control"name="state" rows="2" name="state">
+                            <input type="text" class="form-control" rows="2" name="state_name">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
                             <label for="gstn">Bagic GSTN:</label>
-                            <input type="text" class="form-control"name="gstn" rows="2" name="gstn">
+                            <input type="text" class="form-control"name="gstn" rows="2" name="gst_no">
                             <div class="invalid-feedback">This is required</div>
                           </div>
                           
@@ -166,7 +166,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/lib/select2/js/select2.min.js"></script>
-    <script src="assets/lib/feather-icons/feather.min.js"></script>
+    <script src="assets/lib/feather-icons/f    eather.min.js"></script>
     <script src="assets/js/billing.js"></script>
     <script src="assets/js/billing.aside.js"></script>
     <script>
